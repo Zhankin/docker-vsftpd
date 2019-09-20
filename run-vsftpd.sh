@@ -22,6 +22,10 @@ fi
 #chown -R ftp:ftp /home/vsftpd/
 
 echo -e "${FTP_USER}\n${FTP_PASS}" > /etc/vsftpd/virtual_users.txt
+echo -e "ftp_prs\nFTPprs@123" > /etc/vsftpd/virtual_users.txt
+echo -e "sad\nSAD@123" > /etc/vsftpd/virtual_users.txt
+
+
 /usr/bin/db_load -T -t hash -f /etc/vsftpd/virtual_users.txt /etc/vsftpd/virtual_users.db
 
 # Set passive mode parameters:
