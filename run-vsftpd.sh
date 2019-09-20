@@ -21,10 +21,14 @@ fi
 #mkdir -p "/home/vsftpd/${FTP_USER}"
 #chown -R ftp:ftp /home/vsftpd/
 
-echo -e "${FTP_USER}\n${FTP_PASS}" > /etc/vsftpd/virtual_users.txt
-echo -e "ftp_prs\nFTPprs@123" > /etc/vsftpd/virtual_users.txt
-echo -e "sad\nSAD@123" > /etc/vsftpd/virtual_users.txt
-
+echo -e "ftp_prs\nFTPprs@123" >> /etc/vsftpd/virtual_users.txt
+echo -e "sad\nSAD@123" >> /etc/vsftpd/virtual_users.txt
+echo -e "${FTP_USER1}\n${FTP_PASS1}" >> /etc/vsftpd/virtual_users.txt
+echo -e "${FTP_USER2}\n${FTP_PASS2}" >> /etc/vsftpd/virtual_users.txt
+echo -e "${FTP_USER3}\n${FTP_PASS3}" >> /etc/vsftpd/virtual_users.txt
+echo -e "${FTP_USER4}\n${FTP_PASS4}" >> /etc/vsftpd/virtual_users.txt
+echo -e "${FTP_USER5}\n${FTP_PASS5}" >> /etc/vsftpd/virtual_users.txt
+echo -e "${FTP_USER6}\n${FTP_PASS6}" >> /etc/vsftpd/virtual_users.txt
 
 /usr/bin/db_load -T -t hash -f /etc/vsftpd/virtual_users.txt /etc/vsftpd/virtual_users.db
 
